@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="banner">List of Lists</div>
+  <h3>My Lists</h3>
+  <div class="button"><%= link_to 'New', new_list_path(@list)%></div>
+  <% @lists.each do |list| %>
+  <div class="card"><%= link_to list.name, list_path(list) %></div>
+  <% end %>
+
+  </ul>
+</div>
