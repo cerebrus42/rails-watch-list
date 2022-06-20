@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :find_list, only: %i[show]
+  before_action :find_list, only: %i[show destroy]
 
   def index
     @lists = List.all
@@ -20,6 +20,11 @@ class ListsController < ApplicationController
   end
 
   def show; end
+
+  def destroy
+    @list.destroy
+    redirect_to lists_path
+  end
 
   private
 
